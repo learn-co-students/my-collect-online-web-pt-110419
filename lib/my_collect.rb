@@ -1,12 +1,26 @@
 def my_collect(array)
     counter = 0
     new_array = []
- 
+
     while counter < array.length
-      yield(array[counter])
+      new_array << yield(array[counter])
       counter = counter + 1
-      new_array << array.split(" ").first
     end
     new_array
 end
 
+
+
+
+=begin
+my_collect(["ruby", "javascript", "python", "objective-c"]) do |caps|
+  caps.split(" ").case
+  caps
+end
+
+
+my_collect(["Tim Jones", "Tom Smith", "Sophie Johnson", "Antoin Miller"]) do |first_name|
+  first_name.split(" ").first 
+  first_name
+end 
+=end
