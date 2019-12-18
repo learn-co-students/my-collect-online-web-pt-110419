@@ -2,7 +2,7 @@ def my_collect(arugments)
   i = 0 
   fights = []
 while i < arugments.length 
- fights << yield arugments[0]
+ fights << yield(arugments[i])
   i += 1
 end
 return fights
